@@ -2,6 +2,8 @@
 public class Main {
 
 	public static void main(String[] args) {
+		Banco b = new Banco();
+		
 		Cliente venilton = new Cliente();
 		venilton.setNome("Venilton");
 		
@@ -11,8 +13,15 @@ public class Main {
 		cc.depositar(100);
 		cc.transferir(100, poupanca);
 		
-		cc.imprimirExtrato();
-		poupanca.imprimirExtrato();
+		//cc.imprimirExtrato();
+		//poupanca.imprimirExtrato();
+		
+		cc.sacar(300);
+		
+		b.addConta(poupanca);
+		b.addConta(cc);
+		
+		b.imprimirListaClientes(false, false);
 	}
 
 }
